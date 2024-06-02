@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>Images/login page.png</file>
         <file>Images/logo bank.png</file>
+        <file>Images/sign up page.png</file>
     </qresource>
 </RCC>

@@ -227,6 +227,31 @@ background-image: url(&quot;:/Images/login page.png&quot;);
      <string>username or password is incorrect</string>
     </property>
    </widget>
+   <widget class="QLabel" name="labelWrong_2">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>510</y>
+      <width>231</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#labelWrong {
+    color: #e80006; /* رنگ متن سفید */
+}
+</string>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="text">
+     <string>username or password is incorrect</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
