@@ -6,6 +6,12 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    db = QSqlDatabase :: addDatabase("QSQLITE") ;
+    db.setDatabaseName("mydb.sqlite") ;
+    db.open() ;
+    if(db.isOpen()) ui->labelMessage->setText("YES") ;
+    else ui->labelMessage->setText("NO") ;
+
 }
 
 MainWindow::~MainWindow()
