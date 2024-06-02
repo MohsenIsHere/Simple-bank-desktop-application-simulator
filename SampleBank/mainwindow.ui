@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>570</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1000</width>
+    <height>570</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1000</width>
+    <height>570</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Login</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Resources.qrc">
+    <normaloff>:/Images/logo bank.png</normaloff>:/Images/logo bank.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#MainWindow{		
+background-image: url(&quot;:/Images/login page.png&quot;);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLineEdit" name="lineEditUser">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>264</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Mono</family>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#lineEditUser{
+    background-color:  #970204; /* رنگ پس‌زمینه مشکی */
+    color: black; /* رنگ متن سفید */
+    border: 2px solid #970204; /* حاشیه با رنگ قرمز */
+    border-radius: 12px; /* گرد کردن حاشیه */
+    padding: 3px 10px; /* فاصله داخلی دکمه */
+    font-size: 12px; /* اندازه‌ی متن */
+	font-family:'Cascadia Mono' ;
+	font-weight: bold;
+    text-align: center; /* مرکز‌چین کردن متن */
+    box-shadow: 0 0 10px red; /* افکت glow قرمز */
+}
+#lineEditUser:hover {
+    background-color: #cccccc; /* تغییر رنگ پس‌زمینه به قرمز */
+    color: black; /* تغییر رنگ متن به مشکی */
+    box-shadow: 0 0 20px red; /* تغییر افکت glow */
+}</string>
+    </property>
+    <property name="inputMask">
+     <string/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditPass">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>324</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#lineEditPass{
+    background-color:  #970204; /* رنگ پس‌زمینه مشکی */
+    color: black; /* رنگ متن سفید */
+    border: 2px solid #970204; /* حاشیه با رنگ قرمز */
+    border-radius: 12px; /* گرد کردن حاشیه */
+    padding: 3px 10px; /* فاصله داخلی دکمه */
+    font-size: 12px; /* اندازه‌ی متن */
+	font-family:'Cascadia Mono' ;
+	font-weight: bold;
+    text-align: center; /* مرکز‌چین کردن متن */
+    box-shadow: 0 0 10px red; /* افکت glow قرمز */
+}
+#lineEditPass:hover {
+    background-color: #cccccc; /* تغییر رنگ پس‌زمینه به قرمز */
+    color: black; /* تغییر رنگ متن به مشکی */
+    box-shadow: 0 0 20px red; /* تغییر افکت glow */
+}</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelMessage">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>380</y>
+      <width>171</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#labelMessage {
+    color: white; /* رنگ متن سفید */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Don't have any account ?</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelSignUp">
+    <property name="geometry">
+     <rect>
+      <x>820</x>
+      <y>379</y>
+      <width>81</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#labelSignUp {
+    color: white; /* رنگ متن سفید */
+    font-weight: bold; /* متن بولد */
+    text-decoration: underline; /* خط زیر متن */
+    text-decoration-line: none; /* حذف خط زیر متن به صورت پیش‌فرض */
+}
+
+/* هنگام هوور (hover) بر روی لیبل */
+#labelSignUp:hover {
+    text-decoration-line: underline; /* افزودن خط زیر متن هنگام هوور */
+	color: #970408
+}</string>
+    </property>
+    <property name="text">
+     <string>create one</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonLog">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>430</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#pushButtonLog{
+    background-color:  #690003; /* رنگ پس‌زمینه مشکی */
+    color: white; /* رنگ متن سفید */
+    border: 2px solid #690003; /* حاشیه با رنگ قرمز */
+    border-radius: 12px; /* گرد کردن حاشیه */
+    padding: 3px 10px; /* فاصله داخلی دکمه */
+    font-size: 20px; /* اندازه‌ی متن */
+	font-family:'Cascadia Mono' ;
+	font-weight: bold;
+    text-align: center; /* مرکز‌چین کردن متن */
+    box-shadow: 0 0 10px red; /* افکت glow قرمز */
+}
+#pushButtonLog:hover {
+    background-color: #d00006; /* تغییر رنگ پس‌زمینه به قرمز */
+    color: white; /* تغییر رنگ متن به مشکی */
+    border: 2px solid #d00006; 
+    box-shadow: 0 0 20px red; /* تغییر افکت glow */
+}</string>
+    </property>
+    <property name="text">
+     <string>Login</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelWrong">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>500</y>
+      <width>231</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#labelWrong {
+    color: #e80006; /* رنگ متن سفید */
+}
+</string>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="text">
+     <string>username or password is incorrect</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1000</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="Resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
