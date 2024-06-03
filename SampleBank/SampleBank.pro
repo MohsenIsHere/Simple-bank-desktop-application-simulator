@@ -10,13 +10,21 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    bankaccount.cpp \
     main.cpp \
     mainwindow.cpp \
-    signup.cpp
+    mlist.cpp \
+    node.cpp \
+    signup.cpp \
+    user.cpp
 
 HEADERS += \
+    bankaccount.h \
     mainwindow.h \
-    signup.h
+    mlist.h \
+    node.h \
+    signup.h \
+    user.h
 
 FORMS += \
     mainwindow.ui \
