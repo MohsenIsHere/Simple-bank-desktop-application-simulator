@@ -11,6 +11,7 @@ CONFIG += c++17
 
 SOURCES += \
     bankaccount.cpp \
+    generalfunctions.cpp \
     main.cpp \
     mainwindow.cpp \
     mlist.cpp \
@@ -20,6 +21,7 @@ SOURCES += \
 
 HEADERS += \
     bankaccount.h \
+    generalfunctions.h \
     mainwindow.h \
     mlist.h \
     node.h \

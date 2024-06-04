@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "signup.h"
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -24,8 +25,9 @@ void MainWindow::on_btnSignUp_clicked()
 
 void MainWindow::on_pushButtonLog_clicked()
 {
+    // check input username and password from database :
     bool wrong = true ;
-    db = QSqlDatabase :: addDatabase("QSQLITE") ;
+    QSqlDatabase db = QSqlDatabase :: addDatabase("QSQLITE") ;
     db.setDatabaseName("bankDB.sqlite") ;
     db.open() ;
     if(db.isOpen()) {
@@ -40,6 +42,10 @@ void MainWindow::on_pushButtonLog_clicked()
             wrong = false ;
         }
         if(wrong) ui->labelWrong->setText("username not exist") ;
+    }
+    else
+    {
+        QMessageBox::warning(this,"Not Connected","The database is not connected");
     }
     db.close();
     QSqlDatabase::removeDatabase(QSqlDatabase::defaultConnection);

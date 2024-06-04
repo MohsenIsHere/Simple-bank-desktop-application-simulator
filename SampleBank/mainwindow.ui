@@ -172,7 +172,7 @@ background-image: url(&quot;:/Images/login page.png&quot;);
 }</string>
     </property>
     <property name="text">
-     <string>Login</string>
+     <string>Log in</string>
     </property>
    </widget>
    <widget class="QLabel" name="labelWrong">
