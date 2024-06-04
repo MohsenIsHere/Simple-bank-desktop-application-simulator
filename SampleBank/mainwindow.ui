@@ -142,33 +142,6 @@ background-image: url(&quot;:/Images/login page.png&quot;);
      <string>Don't have any account ?</string>
     </property>
    </widget>
-   <widget class="QLabel" name="labelSignUp">
-    <property name="geometry">
-     <rect>
-      <x>820</x>
-      <y>379</y>
-      <width>81</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#labelSignUp {
-    color: white; /* رنگ متن سفید */
-    font-weight: bold; /* متن بولد */
-    text-decoration: underline; /* خط زیر متن */
-    text-decoration-line: none; /* حذف خط زیر متن به صورت پیش‌فرض */
-}
-
-/* هنگام هوور (hover) بر روی لیبل */
-#labelSignUp:hover {
-    text-decoration-line: underline; /* افزودن خط زیر متن هنگام هوور */
-	color: #970408
-}</string>
-    </property>
-    <property name="text">
-     <string>create one</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButtonLog">
     <property name="geometry">
      <rect>
@@ -208,7 +181,7 @@ background-image: url(&quot;:/Images/login page.png&quot;);
     </property>
     <property name="geometry">
      <rect>
-      <x>700</x>
+      <x>738</x>
       <y>500</y>
       <width>231</width>
       <height>20</height>
@@ -224,32 +197,35 @@ background-image: url(&quot;:/Images/login page.png&quot;);
      <enum>QFrame::Plain</enum>
     </property>
     <property name="text">
-     <string>username or password is incorrect</string>
+     <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="labelWrong_2">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
+   <widget class="QPushButton" name="btnSignUp">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>510</y>
-      <width>231</width>
-      <height>20</height>
+      <x>803</x>
+      <y>374</y>
+      <width>93</width>
+      <height>29</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#labelWrong {
-    color: #e80006; /* رنگ متن سفید */
+     <string notr="true">#btnSignUp {
+    color: white; /* رنگ متن سفید */
+    font-weight: bold; /* متن بولد */
+	background: transparent;
+    text-decoration: underline; /* خط زیر متن */
+    text-decoration-line: none; /* حذف خط زیر متن به صورت پیش‌فرض */
 }
-</string>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Plain</enum>
+
+/* هنگام هوور (hover) بر روی لیبل */
+#btnSignUp:hover {
+    text-decoration-line: underline; /* افزودن خط زیر متن هنگام هوور */
+	color: #970408
+}</string>
     </property>
     <property name="text">
-     <string>username or password is incorrect</string>
+     <string>create one</string>
     </property>
    </widget>
   </widget>

@@ -20,6 +20,11 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_btnSignUp_clicked();
+
+    void on_pushButtonLog_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
