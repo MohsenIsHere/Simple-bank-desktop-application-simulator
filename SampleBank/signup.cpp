@@ -107,12 +107,12 @@ void SignUp::on_btnSignup_clicked()
             QSqlQuery query ;
 
             // check uinque username :
+
             query.prepare("SELECT Username FROM Users WHERE Username = :username") ;
             query.bindValue(":username" , ui->lnEdtUser->text()) ;
             query.exec() ;
             bool uniqueUsername = true ;
-            while (query.next())
-                uniqueUsername = false ;
+            while (query.next()) uniqueUsername = false ;
             if(uniqueUsername) {
                 ui->lblWrongUsername->setText("") ;
                 correctUsername = true ;
@@ -123,12 +123,12 @@ void SignUp::on_btnSignup_clicked()
             }
 
             // check unique national code :
+
             query.prepare("SELECT NationalCode FROM Users WHERE NationalCode = :nationalcode") ;
             query.bindValue(":nationalcode" , ui->lnEdtNatCode->text()) ;
             query.exec() ;
             bool uniqueNatCode = true ;
-            while (query.next())
-                uniqueNatCode = false ;
+            while (query.next()) uniqueNatCode = false ;
             if(uniqueNatCode) {
                 ui->lblWrongNatCode->setText("") ;
                 correctNatCode = true ;

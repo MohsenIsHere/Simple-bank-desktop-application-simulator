@@ -27,7 +27,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">#Home{		
-background-image: url(&quot;:/Images/test.png&quot;);
+background-image: url(&quot;:/Images/home page background.png&quot;);
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
