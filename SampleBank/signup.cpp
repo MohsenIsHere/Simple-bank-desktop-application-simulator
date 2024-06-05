@@ -105,6 +105,8 @@ void SignUp::on_btnSignup_clicked()
         db.open() ;
         if(db.isOpen()) {
             QSqlQuery query ;
+
+            // check uinque username :
             query.prepare("SELECT Username FROM Users WHERE Username = :username") ;
             query.bindValue(":username" , ui->lnEdtUser->text()) ;
             query.exec() ;
@@ -118,6 +120,22 @@ void SignUp::on_btnSignup_clicked()
             else {
                 ui->lblWrongUsername->setText("This username is already selected") ;
                 correctUsername = false ;
+            }
+
+            // check unique national code :
+            query.prepare("SELECT NationalCode FROM Users WHERE NationalCode = :nationalcode") ;
+            query.bindValue(":nationalcode" , ui->lnEdtNatCode->text()) ;
+            query.exec() ;
+            bool uniqueNatCode = true ;
+            while (query.next())
+                uniqueNatCode = false ;
+            if(uniqueNatCode) {
+                ui->lblWrongNatCode->setText("") ;
+                correctNatCode = true ;
+            }
+            else {
+                ui->lblWrongNatCode->setText("This national code is already exist") ;
+                correctNatCode = false ;
             }
             db.close();
             QSqlDatabase::removeDatabase(QSqlDatabase::defaultConnection);
@@ -162,27 +180,22 @@ void SignUp::on_btnSignup_clicked()
         db.open() ;
         if(db.isOpen()) {
             QSqlQuery query ;
-            query.prepare("INSERT INFO Users (Name , Family , Age , NationalCode , Username , Password)") ;
-            // query.bindValue( ":name" , ui->lnEdtName->text()) ;
-            // query.bindValue( ":family" , ui->lnEdtFamily->text()) ;
-            // query.bindValue( ":age" , ui->lnEdtAge->text().toInt()) ;
-            // query.bindValue( ":nationalcode" , ui->lnEdtNatCode->text()) ;
-            // query.bindValue( ":username" , ui->lnEdtUser->text()) ;
-            // query.bindValue( ":password" , ui->lnEdtPass->text()) ;
-            query.addBindValue(ui->lnEdtName->text()) ;
-            query.addBindValue(ui->lnEdtFamily->text()) ;
-            query.addBindValue(ui->lnEdtAge->text().toInt()) ;
-            query.addBindValue(ui->lnEdtNatCode->text()) ;
-            query.addBindValue(ui->lnEdtUser->text()) ;
-            query.addBindValue(ui->lnEdtPass->text()) ;
+            query.prepare("INSERT INTO Users (Name , Family , Age , NationalCode , Username , Password) "
+                          "VALUES (:name , :family , :age , :nationalcode , :username , :password) ") ;
+            query.bindValue( ":name" , ui->lnEdtName->text()) ;
+            query.bindValue( ":family" , ui->lnEdtFamily->text()) ;
+            query.bindValue( ":age" , ui->lnEdtAge->text().toInt()) ;
+            query.bindValue( ":nationalcode" , QString::number(ui->lnEdtNatCode->text().toLongLong())) ;
+            query.bindValue( ":username" , ui->lnEdtUser->text()) ;
+            query.bindValue( ":password" , ui->lnEdtPass->text()) ;
             if(query.exec()) {
-                QMessageBox::information(this, "Saved", "Your data was saved successfully, please log in") ;
-                MainWindow * loginPage = new MainWindow() ;
+                QMessageBox::information(this, "Saved", "Your data was saved successfully please log in") ;
+                MainWindow * loginPage = new MainWindow(nullptr , ui->lnEdtUser->text() , ui->lnEdtPass->text()) ;
                 loginPage->show() ;
                 this->close() ;
             }
             else {
-                QMessageBox::warning(this, "Failed", "Your data was not saved, please try again") ;
+                QMessageBox::warning(this, "Failed", "Your data was not saved please try again") ;
             }
             db.close();
             QSqlDatabase::removeDatabase(QSqlDatabase::defaultConnection);

@@ -4,13 +4,13 @@
 #include "home.h"
 #include <QMessageBox>
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent , const QString & username , const QString & password)
+    : QMainWindow(parent) , ui(new Ui::MainWindow) , m_username(username), m_password(password)
 {
-    ui->setupUi(this);
+    ui->setupUi(this) ;
+    ui->lineEditPass->setText(password) ;
+    ui->lineEditUser->setText(username) ;
 }
-
 MainWindow::~MainWindow()
 {
     delete ui;

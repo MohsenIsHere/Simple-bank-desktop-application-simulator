@@ -16,8 +16,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    QSqlDatabase db ;
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget *parent = nullptr , const QString & username = "" , const QString & password = "");
     ~MainWindow();
 
 private slots:
@@ -26,6 +25,8 @@ private slots:
     void on_pushButtonLog_clicked();
 
 private:
-    Ui::MainWindow *ui;
+    Ui::MainWindow *ui ;
+    QString m_username ;
+    QString m_password ;
 };
 #endif // MAINWINDOW_H
