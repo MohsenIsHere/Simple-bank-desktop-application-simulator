@@ -151,6 +151,9 @@ background-image: url(&quot;:/Images/login page.png&quot;);
       <height>41</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">#pushButtonLog{
     background-color:  #690003; /* رنگ پس‌زمینه مشکی */
@@ -181,7 +184,7 @@ background-image: url(&quot;:/Images/login page.png&quot;);
     </property>
     <property name="geometry">
      <rect>
-      <x>738</x>
+      <x>740</x>
       <y>500</y>
       <width>231</width>
       <height>20</height>
@@ -208,6 +211,9 @@ background-image: url(&quot;:/Images/login page.png&quot;);
       <width>93</width>
       <height>29</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">#btnSignUp {

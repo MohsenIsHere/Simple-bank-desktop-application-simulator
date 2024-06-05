@@ -12,6 +12,7 @@ CONFIG += c++17
 SOURCES += \
     bankaccount.cpp \
     generalfunctions.cpp \
+    home.cpp \
     main.cpp \
     mainwindow.cpp \
     mlist.cpp \
@@ -22,6 +23,7 @@ SOURCES += \
 HEADERS += \
     bankaccount.h \
     generalfunctions.h \
+    home.h \
     mainwindow.h \
     mlist.h \
     node.h \
@@ -29,6 +31,7 @@ HEADERS += \
     user.h
 
 FORMS += \
+    home.ui \
     mainwindow.ui \
     signup.ui
 

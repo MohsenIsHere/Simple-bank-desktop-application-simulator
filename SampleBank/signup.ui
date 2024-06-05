@@ -375,6 +375,9 @@ background-image: url(&quot;:/Images/sign up page.png&quot;);
      <height>61</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">#btnSignup{
     background-color:  #d10000; /* رنگ پس‌زمینه مشکی */
