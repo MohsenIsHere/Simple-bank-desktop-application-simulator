@@ -1,26 +1,26 @@
 #ifndef USER_H
 #define USER_H
-#include<string>
+#include<QString>
 
 class User
 {
 public:
-    User(const std::string & name , const std::string & family , const std::string & nationalCode , const std::string & username ,
-         const std::string & password , const int & age) ;
-    const std::string & getName() const ;
-    const std::string & getFamily() const ;
-    const std::string & getNationalCode() const ;
-    const std::string & getUsername() const ;
-    const std::string & getPassword() const ;
+    User(const QString & name , const QString & family , const QString & nationalCode , const QString & username ,
+         const QString & password , const int & age) ;
+    const QString & getName() const ;
+    const QString & getFamily() const ;
+    const QString & getNationalCode() const ;
+    const QString & getUsername() const ;
+    const QString & getPassword() const ;
     const int & getAge() const ;
-    void setName(const std::string & name) ;
-    void setFamily(const std::string & family) ;
-    void setNationalCode(const std::string & nationalCode) ;
-    void setUsername(const std::string & username) ;
-    void setPassword(const std::string & password) ;
+    void setName(const QString & name) ;
+    void setFamily(const QString & family) ;
+    void setNationalCode(const QString & nationalCode) ;
+    void setUsername(const QString & username) ;
+    void setPassword(const QString & password) ;
     void setAge(const int & age) ;
 private :
-    std::string m_name , m_family , m_nationalCode , m_username , m_password ;
+    QString m_name , m_family , m_nationalCode , m_username , m_password ;
     int m_age ;
 } ;
 

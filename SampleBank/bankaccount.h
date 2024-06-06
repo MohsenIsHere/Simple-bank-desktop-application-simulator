@@ -1,38 +1,38 @@
 #ifndef BANKACCOUNT_H
 #define BANKACCOUNT_H
-#include <string>
+#include <QString>
 
 class BankAccount
 {
 public :
-    BankAccount(const std::string & kind , const std::string & cardNumber , const std::string & shebaNumber ,
-                const std::string & bankAccountNumber , const std::string & secondFixedPassword ,
-                const std::string & ownerUsername , const int & cvv2 , const int & fourDigitCode ,
-                const int & secondDynamicPassword , const int & expirationDate , const long long & inventory) ;
-    const std::string & getKind() const ;
-    const std::string & getCardNumber() const ;
-    const std::string & getShebaNumber() const ;
-    const std::string & getBankAccountNumber() const ;
-    const std::string & getSecondFixedPassword() const ;
-    const std::string & getOwnerUsername() const ;
+    BankAccount(const QString & kind = "" , const QString & cardNumber = "" , const QString & shebaNumber = "" ,
+                const QString & bankAccountNumber = "" , const QString & secondFixedPassword = "" ,
+                const QString & ownerUsername = "" , const int & cvv2 = 0 , const int & fourDigitCode = 0 ,
+                const int & secondDynamicPassword  = 0 , const int & expirationDate = 0 , const long long & inventory = 0) ;
+    const QString & getKind() const ;
+    const QString & getCardNumber() const ;
+    const QString & getShebaNumber() const ;
+    const QString & getBankAccountNumber() const ;
+    const QString & getSecondFixedPassword() const ;
+    const QString & getOwnerUsername() const ;
     const int & getCVV2() const ;
     const int & get4digitCode() const ;
     const int & getSecondDynamicPassword() const ;
     const int & getExpirationDate() const ;
     const long long & getInventory() const ;
-    void setKind(std::string & kind) ;
-    void setCardNumber(std::string & cardNumber) ;
-    void setShebaNumber(std::string & shebaNumber) ;
-    void setBankAccountNumber(std::string & bankAccountNumber) ;
-    void setSecondFixedPassword(std::string & secondFixedPassword) ;
-    void setOwnerUsername(std::string & ownerUsername) ;
-    void setCVV2(int & cvv2) ;
-    void set4digitCode(int & fourDigitCode) ;
-    void setSecondDynamicPassword(int & secondDynamicPassword) ;
-    void setExpirationDate(int & expirationDate) ;
-    void setInventory(int & inventory) ;
+    void setKind(const QString & kind) ;
+    void setCardNumber(const QString & cardNumber) ;
+    void setShebaNumber(const QString & shebaNumber) ;
+    void setBankAccountNumber(const QString & bankAccountNumber) ;
+    void setSecondFixedPassword(const QString & secondFixedPassword) ;
+    void setOwnerUsername(const QString & ownerUsername) ;
+    void setCVV2(const int & cvv2) ;
+    void set4digitCode(const int & fourDigitCode) ;
+    void setSecondDynamicPassword(const int & secondDynamicPassword) ;
+    void setExpirationDate(const int & expirationDate) ;
+    void setInventory(const int & inventory) ;
 private :
-    std::string m_kind , m_cardNumber , m_shebaNumber , m_bankAccountNumber , m_secondFixedPassword , m_ownerUsername ;
+    QString m_kind , m_cardNumber , m_shebaNumber , m_bankAccountNumber , m_secondFixedPassword , m_ownerUsername ;
     int m_cvv2 , m_4digitCode ,  m_secondDynamicPassword , m_expirationDate ;
     long long m_inventory ;
 } ;

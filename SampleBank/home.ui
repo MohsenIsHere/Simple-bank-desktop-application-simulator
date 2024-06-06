@@ -23,11 +23,16 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Home</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normalon>:/Images/logo bank.png</normalon>
+   </iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">#Home{		
-background-image: url(&quot;:/Images/home page background.png&quot;);
+background-image: url(&quot;:/Images/home page.png&quot;);
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
@@ -35,6 +40,180 @@ background-image: url(&quot;:/Images/home page background.png&quot;);
 }
 </string>
   </property>
+  <widget class="QPushButton" name="btnCharity">
+   <property name="geometry">
+    <rect>
+     <x>593</x>
+     <y>333</y>
+     <width>161</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#btnCharity{		
+		background: transparent;
+		background-image: url(&quot;:/Images/charity btn.png&quot;);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+}
+#btnCharity:hover {
+    background-image: url(&quot;:/Images/charity btn hover.png&quot;);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnPay">
+   <property name="geometry">
+    <rect>
+     <x>754</x>
+     <y>289</y>
+     <width>191</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#btnPay{		
+		background: transparent;
+		background-image: url(&quot;:/Images/pay bills btn.png&quot;);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+}
+#btnPay:hover {
+    background-image: url(&quot;:/Images/pay bills btn hover.png&quot;);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnInternet">
+   <property name="geometry">
+    <rect>
+     <x>407</x>
+     <y>354</y>
+     <width>181</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#btnInternet{		
+		background: transparent;
+		background-image: url(&quot;:/Images/internet package btn.png&quot;);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+}
+#btnInternet:hover {
+    background-image: url(&quot;:/Images/internet package btn hover.png&quot;);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnMoneyTrans">
+   <property name="geometry">
+    <rect>
+     <x>237</x>
+     <y>332</y>
+     <width>171</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#btnMoneyTrans{		
+		background: transparent;
+		background-image: url(&quot;:/Images/money transfer btn.png&quot;);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+}
+#btnMoneyTrans:hover {
+    background-image: url(&quot;:/Images/money transfer btn hover.png&quot;);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnCreateAccount">
+   <property name="geometry">
+    <rect>
+     <x>66</x>
+     <y>291</y>
+     <width>161</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#btnCreateAccount{		
+		background: transparent;
+		background-image: url(&quot;:/Images/create account btn.png&quot;);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+}
+#btnCreateAccount:hover {
+    background-image: url(&quot;:/Images/create account btn hover.png&quot;);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnCurrentCard">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>65</y>
+     <width>421</width>
+     <height>221</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#btnCurrentCard{		
+		background: transparent;
+		background-image: url(&quot;:/Images/current card.png&quot;);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+}
+#btnCurrentCard:hover {
+    background-image: url(&quot;:/Images/current card hover.png&quot;);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

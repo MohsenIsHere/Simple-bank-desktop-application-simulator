@@ -55,7 +55,7 @@ void MainWindow::on_pushButtonLog_clicked()
         db.close();
         QSqlDatabase::removeDatabase(QSqlDatabase::defaultConnection);
         if(!wrong) {
-            Home * homePage = new Home() ;
+            Home * homePage = new Home(nullptr , ui->lineEditUser->text()) ;
             homePage->show() ;
             this->close() ;
         }

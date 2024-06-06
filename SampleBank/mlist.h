@@ -2,6 +2,7 @@
 #define MLIST_H
 #include "node.h"
 
+
 template <typename T>
 class MList
 {
@@ -18,5 +19,7 @@ private :
     Node<T> * m_tailNode ;
     int m_size ;
 } ;
+
+#include "mlist.cpp"
 
 #endif // MLIST_H

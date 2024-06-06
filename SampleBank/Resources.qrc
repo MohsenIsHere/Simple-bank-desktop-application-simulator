@@ -3,6 +3,22 @@
         <file>Images/login page.png</file>
         <file>Images/logo bank.png</file>
         <file>Images/sign up page.png</file>
-        <file>Images/home page background.png</file>
+        <file>Images/charity btn.png</file>
+        <file>Images/create account btn.png</file>
+        <file>Images/current card.png</file>
+        <file>Images/home page.png</file>
+        <file>Images/internet package btn.png</file>
+        <file>Images/loan account.png</file>
+        <file>Images/money transfer btn.png</file>
+        <file>Images/pay bills btn.png</file>
+        <file>Images/saving account.png</file>
+        <file>Images/pay bills btn hover.png</file>
+        <file>Images/charity btn hover.png</file>
+        <file>Images/create account btn hover.png</file>
+        <file>Images/current card hover.png</file>
+        <file>Images/internet package btn hover.png</file>
+        <file>Images/loan account hover.png</file>
+        <file>Images/money transfer btn hover.png</file>
+        <file>Images/saving account hover.png</file>
     </qresource>
 </RCC>
