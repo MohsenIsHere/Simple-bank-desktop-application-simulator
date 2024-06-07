@@ -8,6 +8,11 @@ MainWindow::MainWindow(QWidget *parent , const QString & username , const QStrin
     : QMainWindow(parent) , ui(new Ui::MainWindow) , m_username(username), m_password(password)
 {
     ui->setupUi(this) ;
+
+    QPixmap cursorPixmap(":/Images/curser icon.png");
+    QCursor customCursor(cursorPixmap);
+    setCursor(customCursor);
+
     ui->lineEditPass->setText(password) ;
     ui->lineEditUser->setText(username) ;
 }

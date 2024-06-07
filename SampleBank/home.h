@@ -6,6 +6,8 @@
 #include <QDialog>
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlQuery>
+#include <QCursor>
+#include <QPixmap>
 
 namespace Ui {
 class Home;

@@ -1,8 +1,11 @@
 #ifndef SIGNUP_H
 #define SIGNUP_H
+
 #include <QDialog>
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlQuery>
+#include <QCursor>
+#include <QPixmap>
 
 namespace Ui {
 class SignUp;

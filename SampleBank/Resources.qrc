@@ -20,5 +20,10 @@
         <file>Images/loan account hover.png</file>
         <file>Images/money transfer btn hover.png</file>
         <file>Images/saving account hover.png</file>
+        <file>Images/curser icon.png</file>
+        <file>Images/left pointer.png</file>
+        <file>Images/right pointer.png</file>
+        <file>Images/left pointer hover.png</file>
+        <file>Images/rightpointer hover.png</file>
     </qresource>
 </RCC>

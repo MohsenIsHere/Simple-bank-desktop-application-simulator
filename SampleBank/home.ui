@@ -214,6 +214,64 @@ background-image: url(&quot;:/Images/home page.png&quot;);
     <string/>
    </property>
   </widget>
+  <widget class="QPushButton" name="btnRightPtr">
+   <property name="geometry">
+    <rect>
+     <x>679</x>
+     <y>210</y>
+     <width>93</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#btnRightPtr{		
+		background: transparent;
+		background-image: url(&quot;:/Images/right pointer.png&quot;);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+}
+#btnRightPtr:hover {
+    background-image: url(&quot;:/Images/rightpointer hover.png&quot;);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnLeftPtr">
+   <property name="geometry">
+    <rect>
+     <x>206</x>
+     <y>210</y>
+     <width>93</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#btnLeftPtr{		
+		background: transparent;
+		background-image: url(&quot;:/Images/left pointer.png&quot;);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+}
+#btnLeftPtr:hover {
+    background-image: url(&quot;:/Images/left pointer hover.png&quot;);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

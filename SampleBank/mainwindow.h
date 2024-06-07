@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlQuery>
+#include <QCursor>
+#include <QPixmap>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

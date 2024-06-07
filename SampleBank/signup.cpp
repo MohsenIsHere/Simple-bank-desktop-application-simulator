@@ -10,6 +10,10 @@ SignUp::SignUp(QWidget *parent)
     , ui(new Ui::SignUp)
 {
     ui->setupUi(this);
+
+    QPixmap cursorPixmap(":/Images/curser icon.png");
+    QCursor customCursor(cursorPixmap);
+    setCursor(customCursor);
 }
 
 SignUp::~SignUp()
