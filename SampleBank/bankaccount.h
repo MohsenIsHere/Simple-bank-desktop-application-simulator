@@ -31,6 +31,9 @@ public :
     void setSecondDynamicPassword(const int & secondDynamicPassword) ;
     void setExpirationDate(const int & expirationDate) ;
     void setInventory(const int & inventory) ;
+    QString insertSpaceToCardNum() const ;
+    QString insertSlashToExpirationDate() const ;
+    QString centToDollar() const ;
 private :
     QString m_kind , m_cardNumber , m_shebaNumber , m_bankAccountNumber , m_secondFixedPassword , m_ownerUsername ;
     int m_cvv2 , m_4digitCode ,  m_secondDynamicPassword , m_expirationDate ;

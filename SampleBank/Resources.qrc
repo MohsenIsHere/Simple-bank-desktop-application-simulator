@@ -5,25 +5,27 @@
         <file>Images/sign up page.png</file>
         <file>Images/charity btn.png</file>
         <file>Images/create account btn.png</file>
-        <file>Images/current card.png</file>
         <file>Images/home page.png</file>
         <file>Images/internet package btn.png</file>
-        <file>Images/loan account.png</file>
         <file>Images/money transfer btn.png</file>
         <file>Images/pay bills btn.png</file>
-        <file>Images/saving account.png</file>
         <file>Images/pay bills btn hover.png</file>
         <file>Images/charity btn hover.png</file>
         <file>Images/create account btn hover.png</file>
-        <file>Images/current card hover.png</file>
         <file>Images/internet package btn hover.png</file>
-        <file>Images/loan account hover.png</file>
         <file>Images/money transfer btn hover.png</file>
-        <file>Images/saving account hover.png</file>
         <file>Images/curser icon.png</file>
         <file>Images/left pointer.png</file>
         <file>Images/right pointer.png</file>
         <file>Images/left pointer hover.png</file>
         <file>Images/rightpointer hover.png</file>
+        <file>Images/current card hover.png</file>
+        <file>Images/current card.png</file>
+        <file>Images/loan account hover.png</file>
+        <file>Images/loan account.png</file>
+        <file>Images/no account hover.png</file>
+        <file>Images/no account.png</file>
+        <file>Images/saving account hover.png</file>
+        <file>Images/saving account.png</file>
     </qresource>
 </RCC>

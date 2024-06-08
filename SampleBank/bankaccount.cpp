@@ -51,3 +51,30 @@ void BankAccount::setSecondDynamicPassword(const int & secondDynamicPassword) { 
 void BankAccount::setExpirationDate(const int & expirationDate) { m_expirationDate = expirationDate ; }
 
 void BankAccount::setInventory(const int & inventory) { m_inventory = inventory ; }
+
+QString BankAccount::insertSpaceToCardNum() const {
+    QString crdNum ;
+    for(int i = 1 ; i <= 16 ; i++) {
+        crdNum.push_back(m_cardNumber[i - 1]) ;
+        if(i % 4 == 0) crdNum.push_back(" ") ;
+    }
+    return crdNum ;
+}
+
+QString BankAccount::insertSlashToExpirationDate() const {
+    QString date , expirationDate = QString::number(m_expirationDate) ;
+    for(int i = 1 ; i <= 6 ; i++) {
+        date.push_back(expirationDate[i - 1]) ;
+        if(i % 4 == 0) date.push_back("/") ;
+    }
+    return date ;
+}
+
+QString BankAccount::centToDollar() const {
+    long double dollar = m_inventory ;
+    dollar /= 100.00 ;
+    char buffer[24] ;
+    sprintf(buffer, "%.2Lf", dollar) ;
+    QString strDollar = QString(buffer) ;
+    return  strDollar ;
+}

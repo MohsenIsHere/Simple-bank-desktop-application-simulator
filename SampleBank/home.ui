@@ -198,16 +198,12 @@ background-image: url(&quot;:/Images/home page.png&quot;);
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
-    <string notr="true">#btnCurrentCard{		
-		background: transparent;
-		background-image: url(&quot;:/Images/current card.png&quot;);
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-        background-position: center;
-}
-#btnCurrentCard:hover {
-    background-image: url(&quot;:/Images/current card hover.png&quot;);
+    <string notr="true">#btnCurrentCard{
+	padding: 3px 10px; /* فاصله داخلی دکمه */
+    font-size: 20px; /* اندازه‌ی متن */
+	font-family:'Cascadia Mono' ;
+	font-weight: bold;
+    text-align: center; /* مرکز‌چین کردن متن */
 }</string>
    </property>
    <property name="text">

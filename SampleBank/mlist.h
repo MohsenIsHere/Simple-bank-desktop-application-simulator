@@ -13,6 +13,8 @@ public :
     const int & getSize() const ;
     void pushBack(const T & data) ;
     void popBack() ;
+    Node<T> * operator[] (int index) ;
+    const Node<T> * operator[] (int index) const ;
     ~ MList () ;
 private :
     Node<T> * m_headNode ;
@@ -35,32 +37,52 @@ const int & MList<T>::getSize() const { return m_size; }
 
 template <typename T>
 void MList<T>::pushBack(const T & data) {
-    Node<T> * newNode = new Node<T>(data);
+    Node<T> * newNode = new Node<T>(data , m_size) ;
     if (m_size) {
-        newNode->setPrevNode(m_tailNode);
-        m_tailNode->setNextNode(newNode);
+        newNode->setPrevNode(m_tailNode) ;
+        m_tailNode->setNextNode(newNode) ;
     } else {
-        m_headNode = newNode;
+        m_headNode = newNode ;
     }
-    m_tailNode = newNode;
-    m_size++;
+    m_tailNode = newNode ;
+    m_size++ ;
 }
 
 template <typename T>
 void MList<T>::popBack() {
-    Node<T> * node = m_tailNode;
+    Node<T> * node = m_tailNode ;
     if (m_size) {
-        m_tailNode = m_tailNode->getPrevNode();
-        if (m_tailNode) m_tailNode->setNextNode(nullptr);
-        else m_headNode = nullptr;
+        m_tailNode = m_tailNode->getPrevNode() ;
+        if (m_tailNode) m_tailNode->setNextNode(nullptr) ;
+        else m_headNode = nullptr ;
     }
-    delete node;
-    m_size--;
+    delete node ;
+    m_size -- ;
+}
+
+template <typename T>
+Node<T> * MList<T>::operator[] (int index) {
+    if(index >= m_size || m_size == 0 || index < 0) return nullptr ;
+    else {
+        Node<T> * node = m_headNode ;
+        while (node->getIndex() != index) node = node->getNextNode() ;
+        return node ;
+    }
+}
+
+template <typename T>
+const Node<T> * MList<T>::operator[] (int index) const {
+    if(index >= m_size || m_size == 0 || index < 0) return nullptr ;
+    else {
+        Node<T> * node = m_headNode ;
+        while (node->getIndex() != index) node = node->getNextNode() ;
+        return node ;
+    }
 }
 
 template <typename T>
 MList<T>::~MList() {
-    while (m_size > 0) popBack();
+    while (m_size > 0) popBack() ;
 }
 
 #endif // MLIST_H
