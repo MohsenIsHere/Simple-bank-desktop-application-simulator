@@ -3,9 +3,13 @@
 
 #include "mlist.h"
 #include "bankaccount.h"
+#include "createbankaccount.h"
+#include "generalfunctions.h"
 #include <QGraphicsOpacityEffect>
 #include <QPropertyAnimation>
+#include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlQuery>
+#include <QMessageBox>
 #include <QString>
 #include <QCursor>
 #include <QPixmap>
@@ -31,14 +35,18 @@ private slots:
 
     void on_btnLeftPtr_clicked();
 
+    void on_btnCreateAccount_clicked();
+
+    void on_btnMoneyTrans_clicked();
+
 private:
     Ui::Home *ui ;
     QString m_username ;
     MList<BankAccount> m_bankAccounts ;
     QSqlDatabase m_db ;
     int m_currentCardIndex ;
-    QPropertyAnimation *animation;
-    QGraphicsOpacityEffect *opacityEffect;
+    QPropertyAnimation * animation;
+    QGraphicsOpacityEffect * opacityEffect;
     void loadBankAccounts() ;
     void setCardInfo() ;
 };

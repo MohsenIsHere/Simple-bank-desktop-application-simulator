@@ -38,9 +38,8 @@ void Home::loadBankAccounts() {
     query.exec("PRAGMA table_info(BankAccounts)") ;
     while (query.next()) columnNames.push_back(query.value(1).toString()) ;
 
-    QString w = "swewerewdewjkhjwe" ;
     query.prepare("SELECT CardNumber FROM BankAccounts WHERE OwnerUsername = :username") ;
-    query.bindValue(":username" , w) ;
+    query.bindValue(":username" , m_username) ;
     if(query.exec()) {
         while(query.next()) {
 
@@ -57,9 +56,9 @@ void Home::loadBankAccounts() {
             }
 
             bnkAccnt.setKind(values[0]) ; bnkAccnt.setCardNumber(values[1]) ; bnkAccnt.setShebaNumber(values[2]) ;
-            bnkAccnt.setBankAccountNumber(values[3]) ; bnkAccnt.setCVV2(values[4].toInt()) ; bnkAccnt.setInventory(values[5].toLongLong()) ;
-            bnkAccnt.set4digitCode(values[6].toInt()) ; bnkAccnt.setSecondFixedPassword(values[7]) ; bnkAccnt.setSecondDynamicPassword(values[8].toInt()) ;
-            bnkAccnt.setOwnerUsername(values[9]) ; bnkAccnt.setExpirationDate(values[10].toInt()) ;
+            bnkAccnt.setBankAccountNumber(values[3].toLongLong()) ; bnkAccnt.setCVV2(values[4].toInt()) ; bnkAccnt.setInventory(values[5]) ;
+            bnkAccnt.set4digitCode(values[6].toInt()) ; bnkAccnt.setSecondFixedPassword(values[7].toInt()) ;
+            bnkAccnt.setOwnerUsername(values[8]) ; bnkAccnt.setExpirationDate(values[9].toInt()) ;
 
             m_bankAccounts.pushBack(bnkAccnt) ;
         }
@@ -110,12 +109,12 @@ void Home::setCardInfo() {
                               "background-image: url(:/Images/loan account hover.png);"
                               "}" ;
         }
-        QString bankAccountNumber = m_bankAccounts[m_currentCardIndex - 1]->getData().getBankAccountNumber() ,
-            inventory = m_bankAccounts[m_currentCardIndex - 1]->getData().centToDollar() ,
-            cardNumber = m_bankAccounts[m_currentCardIndex - 1]->getData().insertSpaceToCardNum() ,
+        QString bankAccountNumber = QString::number(m_bankAccounts[m_currentCardIndex - 1]->getData().getBankAccountNumber()) ,
+            inventory = centToDollar(m_bankAccounts[m_currentCardIndex - 1]->getData().getInventory()) ,
+            cardNumber = insertSpaceToCardNum(m_bankAccounts[m_currentCardIndex - 1]->getData().getCardNumber()) ,
             shebaNumber = m_bankAccounts[m_currentCardIndex - 1]->getData().getShebaNumber() ,
             cvv2 = QString::number(m_bankAccounts[m_currentCardIndex - 1]->getData().getCVV2()) ,
-            date = m_bankAccounts[m_currentCardIndex - 1]->getData().insertSlashToExpirationDate() ;
+            date = insertSlashToExpirationDate(m_bankAccounts[m_currentCardIndex - 1]->getData().getExpirationDate()) ;
         ui->btnCurrentCard->setText("\n IR"+ shebaNumber +"\n account number : "+ bankAccountNumber +"\n\n "+ cardNumber +"\n\n cvv2 : "+ cvv2 +"\n expiration date : "+ date +"\n\n inventory : "+ inventory +"$") ;
     }
     else {
@@ -135,8 +134,8 @@ Home::~Home()
     delete ui ;
     delete animation ;
     delete opacityEffect ;
-    m_db.close();
-    QSqlDatabase::removeDatabase(QSqlDatabase::defaultConnection);
+    m_db.close() ;
+    QSqlDatabase::removeDatabase(QSqlDatabase::defaultConnection) ;
 }
 
 void Home::on_btnRightPtr_clicked()
@@ -158,5 +157,22 @@ void Home::on_btnLeftPtr_clicked()
     setCardInfo() ;
     ui->btnCurrentCard->setGraphicsEffect(opacityEffect);
     animation->start() ;
+}
+
+
+void Home::on_btnCreateAccount_clicked()
+{
+    if(m_bankAccounts.getSize() < 5) {
+        CreateBankAccount * crtBnkAccntPage = new CreateBankAccount(nullptr , m_username) ;
+        crtBnkAccntPage->show() ;
+        this->close() ;
+    }
+    else QMessageBox::warning(this, "Failed", "You cannot create more than 5 accounts") ;
+}
+
+
+void Home::on_btnMoneyTrans_clicked()
+{
+
 }
 

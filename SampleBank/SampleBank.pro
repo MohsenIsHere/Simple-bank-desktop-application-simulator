@@ -11,6 +11,7 @@ CONFIG += c++17
 
 SOURCES += \
     bankaccount.cpp \
+    createbankaccount.cpp \
     generalfunctions.cpp \
     home.cpp \
     main.cpp \
@@ -18,22 +19,27 @@ SOURCES += \
     mlist.cpp \
     node.cpp \
     signup.cpp \
+    test.cpp \
     user.cpp
 
 HEADERS += \
     bankaccount.h \
+    createbankaccount.h \
     generalfunctions.h \
     home.h \
     mainwindow.h \
     mlist.h \
     node.h \
     signup.h \
+    test.h \
     user.h
 
 FORMS += \
+    createbankaccount.ui \
     home.ui \
     mainwindow.ui \
-    signup.ui
+    signup.ui \
+    test.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

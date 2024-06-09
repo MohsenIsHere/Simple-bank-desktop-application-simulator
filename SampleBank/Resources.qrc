@@ -27,5 +27,8 @@
         <file>Images/no account.png</file>
         <file>Images/saving account hover.png</file>
         <file>Images/saving account.png</file>
+        <file>Images/create bank account page.png</file>
+        <file>Images/back.png</file>
+        <file>Images/back hover.png</file>
     </qresource>
 </RCC>

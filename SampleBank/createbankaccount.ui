@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CreateBankAccount</class>
+ <widget class="QDialog" name="CreateBankAccount">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>570</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1000</width>
+    <height>570</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1000</width>
+    <height>570</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Create Bank Account</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Resources.qrc">
+    <normaloff>:/Images/logo bank.png</normaloff>:/Images/logo bank.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#CreateBankAccount{		
+background-image: url(&quot;:/Images/create bank account page.png&quot;);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+}</string>
+  </property>
+  <widget class="QComboBox" name="cmBoxKind">
+   <property name="geometry">
+    <rect>
+     <x>756</x>
+     <y>348</y>
+     <width>201</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#cmBoxKind{
+    background-color:  #f00015; 
+    color: white; 
+    border: 2px solid #f00015; 
+    border-radius: 7px;
+    padding: 3px 10px; 
+    font-size: 14px; 
+	font-family:'Cascadia Mono' ;
+	font-weight: bold;
+    text-align: center; 
+}
+#cmBoxKind:hover {
+    background-color: #dc0115;
+    color: white; 
+}</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lnEdtMoney">
+   <property name="geometry">
+    <rect>
+     <x>756</x>
+     <y>211</y>
+     <width>201</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lnEdtMoney{
+    background-color:  #f00015; 
+    color: white; 
+    border: 2px solid #f00015; 
+    border-radius: 12px;
+	border-style: inset;
+    padding: 3px 10px; 
+    font-size: 13px; 
+	font-family:'Cascadia Mono' ;
+	font-weight: bold;
+    text-align: center; 
+}
+#lnEdtMoney:hover {
+    background-color: #dc0115;
+    color: white; 
+}</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lnEdtPass">
+   <property name="geometry">
+    <rect>
+     <x>756</x>
+     <y>281</y>
+     <width>201</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lnEdtPass{
+    background-color:  #f00015; 
+    color: white; 
+    border: 2px solid #f00015; 
+    border-radius: 12px;
+	border-style: inset;
+    padding: 3px 10px; 
+    font-size: 13px; 
+	font-family:'Cascadia Mono' ;
+	font-weight: bold;
+    text-align: center; 
+}
+#lnEdtPass:hover {
+    background-color: #dc0115;
+    color: white; 
+}</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblMoney">
+   <property name="geometry">
+    <rect>
+     <x>607</x>
+     <y>211</y>
+     <width>151</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lblMoney{
+    color: white; 
+    padding: 3px 10px; 
+    font-size: 17px; 
+	font-weight: bold;
+    text-align: center; 
+}</string>
+   </property>
+   <property name="text">
+    <string>Initial amount :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblPass">
+   <property name="geometry">
+    <rect>
+     <x>621</x>
+     <y>283</y>
+     <width>141</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lblPass{
+    color: white; 
+    padding: 3px 10px; 
+    font-size: 17px; 
+	font-weight: bold;
+    text-align: center; 
+}</string>
+   </property>
+   <property name="text">
+    <string>4-digit code :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblKind">
+   <property name="geometry">
+    <rect>
+     <x>683</x>
+     <y>351</y>
+     <width>71</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lblKind{
+    color: white; 
+    padding: 3px 10px; 
+    font-size: 17px; 
+	font-weight: bold;
+    text-align: center; 
+}</string>
+   </property>
+   <property name="text">
+    <string>Kind :</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnCreate">
+   <property name="geometry">
+    <rect>
+     <x>811</x>
+     <y>498</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#btnCreate{
+    background-color:  #ff3514; 
+    color: white; 
+    border: 2px solid #ff3514; 
+    border-radius: 12px;
+    padding: 3px 10px; 
+    font-size: 16px; 
+	font-family:'Cascadia Mono' ;
+	font-weight: bold;
+    text-align: center; 
+}
+#btnCreate:hover {
+    background-color: #ff1e00;
+	border: 2px solid #ff1e00; 
+    color: white; 
+}</string>
+   </property>
+   <property name="text">
+    <string>Cerate</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblMoneyWrong">
+   <property name="geometry">
+    <rect>
+     <x>766</x>
+     <y>243</y>
+     <width>251</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lblMoneyWrong {
+    color: #ffa800; 
+    font-weight: bold;
+	font-size: 10px;
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblPassWrong">
+   <property name="geometry">
+    <rect>
+     <x>766</x>
+     <y>313</y>
+     <width>271</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lblPassWrong {
+    color: #ffa800; 
+    font-weight: bold;
+	font-size: 10px;
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lnEdtFixPass">
+   <property name="geometry">
+    <rect>
+     <x>756</x>
+     <y>418</y>
+     <width>201</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lnEdtFixPass{
+    background-color:  #f00015; 
+    color: white; 
+    border: 2px solid #f00015; 
+    border-radius: 12px;
+    padding: 3px 10px; 
+	border-style: inset;
+    font-size: 13px; 
+	font-family:'Cascadia Mono' ;
+	font-weight: bold;
+    text-align: center; 
+}
+#lnEdtFixPass:hover {
+    background-color: #dc0115;
+    color: white; 
+}</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblFixPass">
+   <property name="geometry">
+    <rect>
+     <x>533</x>
+     <y>415</y>
+     <width>221</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lblFixPass{
+    color: white; 
+    padding: 3px 10px; 
+    font-size: 17px; 
+	font-weight: bold;
+    text-align: center; 
+}</string>
+   </property>
+   <property name="text">
+    <string>Second Fixed Pass : (opt)</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblFixPassWrong">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>450</y>
+     <width>241</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lblFixPassWrong {
+    color: #ffa800; 
+    font-weight: bold;
+	font-size: 10px;
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnBack">
+   <property name="geometry">
+    <rect>
+     <x>-20</x>
+     <y>500</y>
+     <width>141</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#btnBack{		
+		background: transparent;
+		background-image: url(&quot;:/Images/back.png&quot;);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+}
+#btnBack:hover {
+    background-image: url(&quot;:/Images/back hover.png&quot;);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="Resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
