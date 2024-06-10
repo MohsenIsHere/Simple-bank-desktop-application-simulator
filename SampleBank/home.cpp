@@ -173,6 +173,11 @@ void Home::on_btnCreateAccount_clicked()
 
 void Home::on_btnMoneyTrans_clicked()
 {
-
+    if(m_bankAccounts.getSize()) {
+    TransferMoney * trnsmnPage = new TransferMoney(nullptr , m_bankAccounts) ;
+    trnsmnPage->show() ;
+    this->close() ;
+    }
+    else QMessageBox::warning(this, "Failed", "You have not created a card yet") ;
 }
 

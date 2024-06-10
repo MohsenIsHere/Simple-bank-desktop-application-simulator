@@ -20,6 +20,7 @@ SOURCES += \
     node.cpp \
     signup.cpp \
     test.cpp \
+    transfermoney.cpp \
     user.cpp
 
 HEADERS += \
@@ -32,6 +33,7 @@ HEADERS += \
     node.h \
     signup.h \
     test.h \
+    transfermoney.h \
     user.h
 
 FORMS += \
@@ -39,7 +41,8 @@ FORMS += \
     home.ui \
     mainwindow.ui \
     signup.ui \
-    test.ui
+    test.ui \
+    transfermoney.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

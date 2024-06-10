@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TransferMoney</class>
+ <widget class="QDialog" name="TransferMoney">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>570</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1000</width>
+    <height>570</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1000</width>
+    <height>570</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Transfer Money</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normalon>:/Images/logo bank.png</normalon>
+   </iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#TransferMoney{		
+background-image: url(&quot;:/Images/transfer money page.png&quot;);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+}</string>
+  </property>
+  <widget class="QComboBox" name="cmbOriginCards">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>70</y>
+     <width>521</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#cmbOriginCards{
+    background-color:  #e8e8e8; 
+    color: black; 
+    border: 2px solid #e8e8e8; 
+    border-radius: 7px;
+    padding: 3px 10px; 
+    font-size: 14px; 
+	font-family:'Cascadia Mono' ;
+	font-weight: bold;
+    text-align: center; 
+}
+#cmbOriginCards:hover {
+    background-color: #d3d3d3;
+}</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnTransfer">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>480</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#btnTransfer{
+    background-color:  #ff7800; 
+    color: white; 
+    border: 2px solid #ff7800; 
+    border-radius: 12px;
+    padding: 3px 10px; 
+    font-size: 16px; 
+	font-family:'Cascadia Mono' ;
+	font-weight: bold;
+    text-align: center; 
+}
+#btnTransfer:hover {
+    background-color: #f05b01;
+	border: 2px solid #f05b01; 
+    color: white; 
+}</string>
+   </property>
+   <property name="text">
+    <string>Transfer</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lnEdtAimCard">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>190</y>
+     <width>381</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lnEdtAimCard{
+    background-color:  #e8e8e8; 
+    color: black; 
+    border: 2px solid #e8e8e8; 
+    border-radius: 14px;
+    padding: 3px 10px; 
+    font-size: 14px; 
+	font-family:'Cascadia Mono' ;
+	font-weight: bold;
+    text-align: center; 
+}
+#lnEdtAimCard:hover {
+    background-color: #d3d3d3;
+}</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lnEdtAmount">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>260</y>
+     <width>381</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lnEdtAmount{
+    background-color:  #e8e8e8; 
+    color: black; 
+    border: 2px solid #e8e8e8; 
+    border-radius: 14px;
+    padding: 3px 10px; 
+    font-size: 14px; 
+	font-family:'Cascadia Mono' ;
+	font-weight: bold;
+    text-align: center; 
+}
+#lnEdtAmount:hover {
+    background-color: #d3d3d3;
+}</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lnEdtDynamicPass">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>330</y>
+     <width>261</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lnEdtDynamicPass{
+    background-color:  #e8e8e8; 
+    color: black; 
+    border: 2px solid #e8e8e8; 
+    border-radius: 14px;
+    padding: 3px 10px; 
+    font-size: 14px; 
+	font-family:'Cascadia Mono' ;
+	font-weight: bold;
+    text-align: center; 
+}
+#lnEdtDynamicPass:hover {
+    background-color: #d3d3d3;
+}</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnSendPass">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>330</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#btnSendPass{
+    background-color:  #ff0042; 
+    color: white; 
+    border: 2px solid #ff0042; 
+    border-radius: 12px;
+    padding: 3px 3px; 
+    font-size: 15px; 
+	font-family:'Cascadia Mono' ;
+	font-weight: bold;
+    text-align: center; 
+}
+#btnSendPass:hover {
+    background-color: #d30037;
+	border: 2px solid #d30037; 
+    color: white; 
+}</string>
+   </property>
+   <property name="text">
+    <string>give code</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lnEdtFixPass">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>400</y>
+     <width>381</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lnEdtFixPass{
+    background-color:  #bfbfbf; 
+    color: black; 
+    border: 2px solid #bfbfbf; 
+    border-radius: 14px;
+    padding: 3px 10px; 
+    font-size: 14px; 
+	font-family:'Cascadia Mono' ;
+	font-weight: bold;
+    text-align: center; 
+}
+#lnEdtFixPass:hover {
+    background-color: #d3d3d3;
+}</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblAimCard">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>170</y>
+     <width>121</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lblAimCard{
+    color: white; 
+    padding: 3px 10px; 
+    font-size: 12px; 
+	font-weight: bold;
+    text-align: center; 
+}</string>
+   </property>
+   <property name="text">
+    <string>Destination card</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblAmount">
+   <property name="geometry">
+    <rect>
+     <x>311</x>
+     <y>240</y>
+     <width>111</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lblAmount{
+    color: white; 
+    padding: 3px 10px; 
+    font-size: 12px; 
+	font-weight: bold;
+    text-align: center; 
+}</string>
+   </property>
+   <property name="text">
+    <string>Amount</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblFixPass">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>380</y>
+     <width>111</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lblFixPass{
+    color: white; 
+    padding: 3px 10px; 
+    font-size: 12px; 
+	font-weight: bold;
+    text-align: center; 
+}</string>
+   </property>
+   <property name="text">
+    <string>Fixed code</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblAimCardWrong">
+   <property name="geometry">
+    <rect>
+     <x>311</x>
+     <y>220</y>
+     <width>371</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lblAimCardWrong{
+    color: #ffa800; 
+    padding: 3px 10px; 
+    font-size: 9px; 
+	font-weight: bold;
+    text-align: center; 
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblAmountWrong">
+   <property name="geometry">
+    <rect>
+     <x>311</x>
+     <y>289</y>
+     <width>371</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lblAmountWrong{
+    color: #ffa800; 
+    padding: 3px 10px; 
+    font-size: 9px; 
+	font-weight: bold;
+    text-align: center; 
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblDynamicPassWrong">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>359</y>
+     <width>261</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lblDynamicPassWrong{
+    color: #ffa800; 
+    padding: 3px 10px; 
+    font-size: 9px; 
+	font-weight: bold;
+    text-align: center; 
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblFixPassWrong">
+   <property name="geometry">
+    <rect>
+     <x>312</x>
+     <y>429</y>
+     <width>371</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lblFixPassWrong{
+    color: #ffa800; 
+    padding: 3px 10px; 
+    font-size: 9px; 
+	font-weight: bold;
+    text-align: center; 
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblName">
+   <property name="geometry">
+    <rect>
+     <x>315</x>
+     <y>220</y>
+     <width>321</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lblName{
+    color: #09ffc2; 
+    padding: 3px 10px; 
+    font-size: 9px; 
+	font-weight: bold;
+    text-align: right; 
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblDateWrong">
+   <property name="geometry">
+    <rect>
+     <x>444</x>
+     <y>512</y>
+     <width>281</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#lblDateWrong{
+    color: #ffa800; 
+    padding: 3px 10px; 
+    font-size: 9px; 
+	font-weight: bold;
+    text-align: center; 
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnBack">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>510</y>
+     <width>111</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#btnBack{		
+		background: transparent;
+		background-image: url(&quot;:/Images/back.png&quot;);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+}
+#btnBack:hover {
+    background-image: url(&quot;:/Images/back hover.png&quot;);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

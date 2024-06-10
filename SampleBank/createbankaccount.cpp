@@ -8,7 +8,6 @@
 #include <QSqlError>
 #include <random>
 #include <QDateTime>
-
 CreateBankAccount::CreateBankAccount(QWidget *parent , const QString & username)
     : QDialog(parent)
     , ui(new Ui::CreateBankAccount) , m_username(username)
@@ -99,14 +98,13 @@ int CreateBankAccount::createEcpirationDate() {
     }
     int finalDate = expDate.toInt() ;
     return finalDate ;
-
 }
 
 CreateBankAccount::~CreateBankAccount()
 {
     delete ui ;
-    m_db.close();
-    QSqlDatabase::removeDatabase(QSqlDatabase::defaultConnection);
+    m_db.close() ;
+    QSqlDatabase::removeDatabase(QSqlDatabase::defaultConnection) ;
 }
 
 void CreateBankAccount::on_btnCreate_clicked()
@@ -115,19 +113,43 @@ void CreateBankAccount::on_btnCreate_clicked()
 
     static QRegularExpression NotNum("\\D") ;
 
-    if(ui->lnEdtMoney->text().isEmpty()) ui->lblMoneyWrong->setText("The field must not be empty") ;
-    else if(ui->lnEdtMoney->text().contains(" ")) ui->lblMoneyWrong->setText("Don't enter space") ;
-    else if(!checkCorrectAmount(ui->lnEdtMoney->text())) ui->lblMoneyWrong->setText("Do not enter letters or more than 2 decimal places") ;
-    else if(ui->lnEdtMoney->text().toDouble() <= 50 || ui->lnEdtMoney->text().toDouble() > 3000)  ui->lblMoneyWrong->setText("Amount should be between 50 and 3000 $") ;
+    if(ui->lnEdtMoney->text().isEmpty()) {
+        ui->lblMoneyWrong->setText("The field must not be empty") ;
+        correctMoney = false ;
+    }
+    else if(ui->lnEdtMoney->text().contains(" ")) {
+        ui->lblMoneyWrong->setText("Don't enter space") ;
+        correctMoney = false ;
+    }
+    else if(!checkCorrectAmount(ui->lnEdtMoney->text())){
+        ui->lblMoneyWrong->setText("Do not enter letters or more than 2 decimal places") ;
+        correctMoney = false ;
+    }
+    else if(ui->lnEdtMoney->text().toDouble() <= 50 || ui->lnEdtMoney->text().toDouble() > 3000){
+        ui->lblMoneyWrong->setText("Amount should be between 50 and 3000 $") ;
+        correctMoney = false ;
+    }
     else {
         ui->lblMoneyWrong->setText("") ;
         correctMoney = true ;
     }
 
-    if(ui->lnEdtPass->text().isEmpty()) ui->lblPassWrong->setText("The field must not be empty") ;
-    else if(ui->lnEdtPass->text().contains(" ")) ui->lblPassWrong->setText("Don't enter space") ;
-    else if(ui->lnEdtPass->text().contains(NotNum)) ui->lblPassWrong->setText("Don't enter letters") ;
-    else if(ui->lnEdtPass->text().length() != 4) ui->lblPassWrong->setText("Code must be 4 digits") ;
+    if(ui->lnEdtPass->text().isEmpty()) {
+        ui->lblPassWrong->setText("The field must not be empty") ;
+        correctCode = false ;
+    }
+    else if(ui->lnEdtPass->text().contains(" ")) {
+        ui->lblPassWrong->setText("Don't enter space") ;
+        correctCode = false ;
+    }
+    else if(ui->lnEdtPass->text().contains(NotNum)) {
+        ui->lblPassWrong->setText("Don't enter letters") ;
+        correctCode = false ;
+    }
+    else if(ui->lnEdtPass->text().length() != 4) {
+        ui->lblPassWrong->setText("Code must be 4 digits") ;
+        correctCode = false ;
+    }
     else {
         ui->lblPassWrong->setText("") ;
         correctCode = true ;
@@ -137,9 +159,18 @@ void CreateBankAccount::on_btnCreate_clicked()
         correctOptCode =  true ;
     }
     else {
-        if(ui->lnEdtFixPass->text().contains(" ")) ui->lblFixPassWrong->setText("Don't enter space") ;
-        else if(ui->lnEdtFixPass->text().contains(NotNum)) ui->lblFixPassWrong->setText("Don't enter letters") ;
-        else if(ui->lnEdtFixPass->text().length() != 7) ui->lblFixPassWrong->setText("Code must be 7 digits") ;
+        if(ui->lnEdtFixPass->text().contains(" ")) {
+            ui->lblFixPassWrong->setText("Don't enter space") ;
+            correctOptCode = false ;
+        }
+        else if(ui->lnEdtFixPass->text().contains(NotNum)) {
+            ui->lblFixPassWrong->setText("Don't enter letters") ;
+            correctOptCode = false ;
+        }
+        else if(ui->lnEdtFixPass->text().length() != 7) {
+            ui->lblFixPassWrong->setText("Code must be 7 digits") ;
+            correctOptCode = false ;
+        }
         else {
             ui->lblFixPassWrong->setText("") ;
             correctOptCode = true ;
@@ -165,7 +196,7 @@ void CreateBankAccount::on_btnCreate_clicked()
             query.bindValue( ":fourdigitcode" , ui->lnEdtPass->text().toInt()) ;
             query.bindValue( ":secondfixedpass" , ui->lnEdtFixPass->text().toInt()) ;
             query.bindValue( ":ownerusername" , m_username) ;
-            query.bindValue( ":expirationDate" , createEcpirationDate()) ; // ********* ناتمام
+            query.bindValue( ":expirationDate" , createEcpirationDate()) ;
             if(query.exec()) {
                 QMessageBox::information(this, "Create Card", "Your Card was created!") ;
                 Home * homePage = new Home(nullptr , m_username) ;

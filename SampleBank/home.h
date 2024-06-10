@@ -5,6 +5,7 @@
 #include "bankaccount.h"
 #include "createbankaccount.h"
 #include "generalfunctions.h"
+#include "transfermoney.h"
 #include <QGraphicsOpacityEffect>
 #include <QPropertyAnimation>
 #include <QtSql/QSqlDatabase>

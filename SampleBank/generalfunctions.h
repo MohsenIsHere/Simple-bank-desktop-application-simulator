@@ -12,6 +12,8 @@ bool checkCorrectAmount(QString amount) ;
 void deleteFirstZeros(QString & amount) ;
 
 void reverseString(QString & str) ;
+
+QString createTransactionDate() ;
 // ---------------------------------------------------------------
 // Functions to convert information into a suitable display form :
 
@@ -23,6 +25,9 @@ QString centToDollar(QString amount) ;
 
 // ---------------------------------------------------------------
 // Functions for calculations of very large numbers :
+bool comparisonNumbers(QString num1 , QString num2) ;
+
+QString calculationOfTransactionPercentage(QString amount) ;
 
 QString dollarToCent(QString amount) ;
 

@@ -1,4 +1,5 @@
 #include "generalfunctions.h"
+#include <QDateTime>
 
 bool checkNumbersAbsence(const QString & text) {
     static QRegularExpression re("\\d") ;
@@ -44,6 +45,46 @@ void reverseString(QString & str) {
     str = revStr ;
 }
 
+QString createTransactionDate() {
+    QDateTime currentDateTime = QDateTime::currentDateTime() ;
+    QDate currentDate = currentDateTime.date() ;
+    int year = currentDate.year() ;
+    int month = currentDate.month() ;
+    int day = currentDate.day() ;
+    QTime currentTime = currentDateTime.time() ;
+    int hour = currentTime.hour() ;
+    int minute = currentTime.minute() ;
+    int second = currentTime.second() ;
+    QString date ;
+    date.append(QString::number(year)) ;
+    if(month >= 10) date.append(QString::number(month)) ;
+    else {
+        date.append('0') ;
+        date.append(QString::number(month)) ;
+    }
+    if(day >= 10) date.append(QString::number(day)) ;
+    else {
+        date.append('0') ;
+        date.append(QString::number(day)) ;
+    }
+    if(hour >= 10) date.append(QString::number(hour)) ;
+    else {
+        date.append('0') ;
+        date.append(QString::number(hour)) ;
+    }
+    if(minute >= 10) date.append(QString::number(minute)) ;
+    else {
+        date.append('0') ;
+        date.append(QString::number(minute)) ;
+    }
+    if(second >= 10) date.append(QString::number(second)) ;
+    else {
+        date.append('0') ;
+        date.append(QString::number(second)) ;
+    }
+    return date ;
+}
+
 // ---------------------------------------------------------------
 // Functions to convert information into a suitable display form :
 
@@ -62,14 +103,40 @@ QString insertSlashToExpirationDate(int expirationDate) {
 }
 
 QString centToDollar(QString amount) {
+    static QRegularExpression NotNum("\\D") ;
+    if(!amount.contains(NotNum)) {
     if(amount.length() > 2) amount.insert(amount.length() - 2 , '.') ;
     else if(amount.length() == 2) amount.prepend("0.") ;
     else if(amount.length() == 1) amount.prepend("0.0") ;
+    }else{
+        amount.remove(amount.length() - 3 , 1) ;
+        amount.insert(amount.length() - 4 , '.') ;
+    }
     return amount ;
 }
 
 //-----------------------------------------------------------------
 // Functions for calculations of very large numbers :
+
+bool comparisonNumbers(QString num1 , QString num2) {
+    if(num1.length() > num2.length()) return true ;
+    else if (num1.length() < num2.length()) return false ;
+    else {
+        int len = num1.length() ;
+        for(int i = 0 ; i < len ; i++) {
+            if(num1[i].digitValue() > num2[i].digitValue()) return true ;
+            else if(num1[i].digitValue() < num2[i].digitValue()) return false ;
+        }
+    }
+    return false ;
+}
+
+QString calculationOfTransactionPercentage(QString amount) {
+    if(amount.length() == 1) amount.prepend("0.0") ;
+    else if (amount.length() == 2) amount.prepend("0.") ;
+    else amount.insert(amount.length() - 2 , '.') ;
+    return amount ;
+}
 
 QString dollarToCent(QString amount) {
     static QRegularExpression NotNum("\\D") ;
@@ -95,19 +162,19 @@ QString plus(QString num1 , QString num2) {
         num1 = num2 ;
         num2 = mover ;
     }
-    int len1 = num1.length() , len2 = num2.length() , plus , add = 0 ;
+    int len1 = num1.length() , len2 = num2.length() , pluss , add = 0 ;
     reverseString(num1) ; reverseString(num2) ;
     for(int i = 0 ; i < len1 ; i++) {
 
-        if(i < len2) plus = num1[i].digitValue() + num2[i].digitValue() + add ;
-        else plus = num1[i].digitValue() + add ;
+        if(i < len2) pluss = num1[i].digitValue() + num2[i].digitValue() + add ;
+        else pluss = num1[i].digitValue() + add ;
 
-        if(plus >= 10) {
-            plus -= 10 ;
+        if(pluss >= 10) {
+            pluss -= 10 ;
             add = 1 ;
         }
         else add = 0 ;
-        res.push_front(QChar('0' + plus)) ;
+        res.push_front(QChar('0' + pluss)) ;
     }
     if(add) res.push_front('1') ;
     return res ;
@@ -131,19 +198,19 @@ QString mines(QString num1 , QString num2) {
             }
         }
     }
-    int len1 = num1.length() , len2 = num2.length() , mines , add = 0 ;
+    int len1 = num1.length() , len2 = num2.length() , miness , add = 0 ;
     reverseString(num1) ; reverseString(num2) ;
     for(int i = 0 ; i < len1 ; i++) {
 
-        if(i < len2) mines = num1[i].digitValue() - num2[i].digitValue() + add ;
-        else mines = num1[i].digitValue() + add ;
+        if(i < len2) miness = num1[i].digitValue() - num2[i].digitValue() + add ;
+        else miness = num1[i].digitValue() + add ;
 
-        if(mines < 0) {
-            mines += 10 ;
+        if(miness < 0) {
+            miness += 10 ;
             add = -1 ;
         }
         else add = 0 ;
-        res.push_front(QChar('0' + mines)) ;
+        res.push_front(QChar('0' + miness)) ;
     }
     return res ;
 
